@@ -1,7 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../../Components/Pages/Blog/Blog";
 import Home from "../../Components/Pages/Home/Home";
+import Login from "../../Components/Pages/Login/Login";
+import ServiceDetails from "../../Components/Pages/ServiceDetails/ServiceDetails/ServiceDetails";
+import Services from "../../Components/Pages/Services/Services/Services";
 import Main from "../../Layout/Main/Main";
+import SignUp from './../../Components/Pages/SignUp/SignUp';
 
 export const routes = createBrowserRouter([
     {
@@ -13,19 +17,20 @@ export const routes = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path: '/login',
-                element: 
-                <h1>hello</h1>
+                path: '/service',
+                element: <Services></Services>
             },
             {
-                path: '/signup',
-                element: 
-                <h1>hello</h1>
+                path: '/service/:id',   
+                element: <ServiceDetails></ServiceDetails>
             },
             {
-                path: '/checkout/:id',
-                element: 
-                <h1>hello</h1>
+                path: '/login',   
+                element:<Login></Login>
+            },
+            {
+                path: '/signup',   
+                element:<SignUp></SignUp>
             },
             {
                 path: '/blog',
