@@ -2,7 +2,7 @@ import React from 'react';
 import './Carousel.css'
 const Carousel = () => {
     return (
-        <div className="carousel w-full image container ml-9">
+        <div className="carousel w-full image container">
         <div id="slide1" className="carousel-item relative w-full">
 
           <img src="https://img.freepik.com/premium-photo/doctor-with-stethoscope-hand-hospital-background-medical-medicine-concept_34200-278.jpg?w=2000" className="w-full" />

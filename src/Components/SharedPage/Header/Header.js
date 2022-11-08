@@ -3,7 +3,7 @@ import logo from '../../../Images/pngwing.com (3).png'
 import './Header.css'
 const Header = () => {
     return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-stone-100 container mb-2">
      <div className="navbar-start logo">
        <div className="dropdown">
         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -11,20 +11,22 @@ const Header = () => {
        </label>
        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
         <li><a>Home</a></li>
-        <li><a>Login</a></li>
+        <li><a>Services</a></li>
+        <li><a>My Reviews</a></li>
       </ul>
     </div>
     <img src={logo} className="ml-6" alt="" />
-    <a className=" ml-6 text-4xl font-bold">True <span className=' text-primary'> Care</span></a>
+    <a className=" ml-6 text-4xl font-bold">True <span className=' text-teal-600'> Care</span></a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal p-0">
+    <ul className="menu menu-horizontal p-0 font-bold">
     <li><a>Home</a></li>
-        <li><a>Login</a></li>
+    <li><a>Services</a></li>
+        <li><a>My Reviews</a></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">Get started</a>
+  <div className="navbar-end mr-6 login">
+    <button className='btn bg-teal-600 '>Login</button>
   </div>
 </div>
     );

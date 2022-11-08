@@ -4,3 +4,7 @@
 .logo{
     display: flex;
 }
+.login button{
+    border: none;
+    color: white;
+}
