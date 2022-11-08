@@ -1,6 +1,6 @@
 [
     {
-        "id": 1,
+        
         "name": "Dental Implants",
         "price": 10000,
         "ratings": 4,
@@ -8,7 +8,7 @@
         "details": "There are three common types of dental implants that you can choose from Endosteal, subperiosteal, and zygomatic. Endosteal is the safest and most common, followed by subperiosteal, and then zygomatic being the last and most complex. It is rarely used.How Long Do Dental Implants Last? With regular brushing and flossing, the implant screw itself can last a lifetime, assuming the patient receives regular dental check-ups every 6 months. The crown, however, usually only lasts about 10 to 15 years before it may need a replacement due to wear and tear.The average cost of dental implants is $3,000 — $5,000. It includes the post, abutment, and crown placement. Bone grafting, tooth extraction, CT scan, and X-ray are paid for separately."
       },
       {
-        "id": 2,
+        
         "name": "Teeth Whitening",
         "price": 15000,
         "ratings": 4.5,
@@ -16,7 +16,7 @@
         "details": "Yellow teeth can be completely whitened with teeth whitening technologies at the dentist or at home. Depending on the status of your yellow teeth as well as your needs, the doctor will advise and prescribe the appropriate method.Dentists in the UK charge roughly £200 – £400 for take-home teeth whitening kits, which are less expensive than having the procedure conducted by a dentist.Having your teeth whitened in-office will cost approximately $600, and while this is significantly more money than the cost of take-home kits or other teeth whitening products, such as gels, gums, or whitening toothpastes"
       },
       {
-        "id": 3,
+        
         "name": "Surgical Dentistry",
         "price": 5000,
         "ratings": 4.2,
@@ -24,7 +24,7 @@
         "details": "Surgical dentistry is a branch of dentistry that practices treatment methods like teeth preservation operations, bone grafting, preparation and implantation of teeth, as well as a variety of aesthetic surgeries in periodontology. Surgical dentistry in its practice includes tooth extraction.Oral surgery refers to any surgical procedure performed on your teeth, gums, jaws or other oral structures. This includes extractions, implants, gum grafts and jaw surgeries. Oral surgery is usually performed by an oral and maxillofacial surgeon or a periodontist.While dentists are primary care physicians responsible for the upkeep of a patient's oral health along with simple treatments, oral surgeons perform evaluations and procedures for specific, complex issues and surgeries."
       } ,
       {
-        "id": 4,
+        
         "name": "Root Canal",
         "price": 25000,
         "ratings": 4.5,
@@ -32,7 +32,7 @@
         "details": "Root canal treatment (endodontics) is a dental procedure used to treat infection at the centre of a tooth. Root canal treatment is not painful and can save a tooth that might otherwise have to be removed completely.According to this report, 98 percent of root canals last one year, 92 percent last five years, and 86 percent last ten years or longer. Molars treated by endodontists had a 10 year survival rate, significantly higher than that of molars treated by general dentists.If you feel pain in your tooth while you're drinking or eating something hot or cold you might need a root canal."
       } ,
       {
-        "id": 5,
+        
         "name": "Cap / Crown",
         "price": 15000,
         "ratings": 5,
@@ -40,7 +40,7 @@
         "details": "In dentistry, a crown most commonly refers to a dental cap, a type of dental restoration that completely caps or encircles a tooth or dental implant. A crown may be needed when a large cavity threatens the health of a tooth. A crown is typically bonded to the tooth by dental cement.The most common method of crowning a tooth involves taking a dental impression of a tooth prepared by a dentist, then fabricating the crown outside of the mouth. The crown can then be inserted at a subsequent dental appointment."
       } ,
       {
-        "id": 6,
+        
         "name": "Orthodontics",
         "price": 4500,
         "ratings": 4.5,
