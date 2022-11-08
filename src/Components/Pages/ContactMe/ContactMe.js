@@ -7,7 +7,7 @@ const ContactMe = () => {
     return (
         <div className='mb-10'>
             <p className='text-center text-4xl mb-5 font-bold text-teal-600'>Contact Me</p>
-           <div className='flex justify-evenly  text-3xl font-bold'>  
+           <div className='flex justify-evenly  text-3xl font-bold contact'>  
            <div>
             <div className='flex justify-center items-center contact-body'>
                 <AiOutlineClockCircle className='contact-icon'></AiOutlineClockCircle>
