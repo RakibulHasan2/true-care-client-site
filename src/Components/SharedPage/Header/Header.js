@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/UserContext';
 import logo from '../../../Images/pngwing.com (3).png'
 import './Header.css'
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext)
     return (
     <div className="navbar bg-stone-100 container mb-2">
      <div className="navbar-start logo">
@@ -29,9 +31,16 @@ const Header = () => {
     </ul>
   </div>
   <div className="navbar-end mr-6 login">
-   <Link to='/login'>
-   <button className='btn bg-teal-600 '>Login</button>
-   </Link>
+               {
+                user?.uid ?
+                <div className='logout'>
+                 <button className='btn bg-teal-600' onClick={logOut}>Log Out</button>
+                </div>
+                :
+                <>
+                <Link to="/login"> <button className='btn bg-teal-600 '>Login</button></Link>
+                </>
+                }
   </div>
 </div>
     );
