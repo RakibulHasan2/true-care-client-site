@@ -17,7 +17,7 @@ const Header = () => {
         {
           user?.uid?
           <>
-          <li><a>Add Services</a></li>
+          <li><Link to='/addService'>Add Services</Link></li>
           <li><Link to='/reviews'>My Reviews</Link></li>
           </>: <p></p>
         }
@@ -33,7 +33,7 @@ const Header = () => {
         {
           user?.uid?
           <>
-          <li><a>Add Services</a></li>
+            <li><Link to='/addService'>Add Services</Link></li>
           <li><Link to='/reviews'>My Reviews</Link></li>
           </>: <p></p>
         }

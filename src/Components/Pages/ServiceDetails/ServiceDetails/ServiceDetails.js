@@ -1,10 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/UserContext';
 import './ServiceDetails.css'
 const ServiceDetails = () => {
     const {_id,name, img, price, details, ratings}  = useLoaderData()
     const {user} = useContext(AuthContext)
+    const [submit, setSubmit] = useState('')
+    const loginPlease = () =>{
+        setSubmit('Please Login to Submit')
+    }
 
     const handlePlaceReview = event => {
         event.preventDefault();
@@ -46,6 +50,7 @@ const ServiceDetails = () => {
     }
     return (
             <div >
+                 {/*----------more details part of service----------*/}
              <div className='flex justify-between container details-container mb-5'>
            <div className='details-body'>
            <h1 className='text-center text-primary font-bold text-3xl '>{name}</h1>
@@ -55,27 +60,35 @@ const ServiceDetails = () => {
            </div>
            <img src={img} alt="" />
            </div>
+              {/* ----------all review---------------------*/}
+              <div>
+
+              </div>
+            {/* ----------review form---------------------*/}
            <div className='review-section'>
            <form onSubmit={handlePlaceReview}>
                 <p className='text-3xl font-bold text-center mb-5'>Please Give Your Valuable Review in <span className='text-primary'>{name}</span></p>
 
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5'>
-                    <input name="Name" type="text" placeholder="Your Name" className="input input-ghost w-full  input-bordered" />
+                    <input name="Name" type="text" placeholder="Your Name" className="input input-ghost w-full  input-bordered" required />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
-                    <input name="url" type="text" placeholder="Your Photo URL"  className="input input-ghost w-full  input-bordered" />
+                    <input name="url" type="text" placeholder="Your Photo URL"  className="input input-ghost w-full  input-bordered"  required  />
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full mb-3" placeholder="Your Message" required></textarea>
 
-               {
+               {/* {
                 user?.uid?
                 <>
                  <input className='btn mb-5' type="submit" value="Submit Review" />
                  </>
                  :
                  <> <Link to='/login'><input className='btn mb-5' type="submit" value="Submit Review" /></Link></>
-               }
+               } */}
+               <Link to='/login'>
+               <p className='mb-4 text-lg text-red-600'>{submit}</p>
+               </Link>
+               <input onClick={loginPlease} className='btn mb-5' type="submit" value="Submit Review" />
             </form>
-
            </div>
         </div>
     );

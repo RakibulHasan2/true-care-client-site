@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../context/UserContext';
 import './MyReviews.css'
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Review from './Review/Review';
 const MyReviews = () => {
     const {user} = useContext(AuthContext)
@@ -34,7 +34,6 @@ const MyReviews = () => {
                     progress: undefined,
                     theme: "light",
                     })
-                // alert('deleted');
                 const remaining = reviews.filter(odr => odr._id !== id);
                 setReview(remaining);
             }
