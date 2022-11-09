@@ -7,6 +7,7 @@ import ServiceDetails from "../../Components/Pages/ServiceDetails/ServiceDetails
 import Services from "../../Components/Pages/Services/Services/Services";
 import Main from "../../Layout/Main/Main";
 import SignUp from './../../Components/Pages/SignUp/SignUp';
+import PrivateRoute from './../PrivateRoute/PrivateRoute';
 
 export const routes = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/reviews', 
-                element: <MyReviews></MyReviews>
+                element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
             },
             {
                 path: '/login',   

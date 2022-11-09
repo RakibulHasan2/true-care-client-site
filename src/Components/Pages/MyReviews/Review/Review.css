@@ -5,3 +5,7 @@
 .review-box{
     border:1px solid black;
 }
+.userPhoto img{
+    width: 50px;
+    height: 50px;
+}
