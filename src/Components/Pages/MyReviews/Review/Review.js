@@ -40,10 +40,7 @@ const Review = ({review, handleDelete}) => {
                     <div className="card-actions justify-end">
                     <button className='btn btn-success'>Edit Review</button>
                     </div>
-                </div>
-                {/* <p className='mt-11  flex items-center'> Rating: <span className='flex ml-2 items-center'><FaStar className='text-yellow-500'></FaStar>{star}<img className="mask mask-circle h-11 ml-14" src={photoURL} alt='' /><h1>{buyerName}</h1></span></p>  */}
-                
-                
+                </div>           
             </div>
         </div>
     );

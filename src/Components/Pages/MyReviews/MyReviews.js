@@ -46,13 +46,14 @@ const MyReviews = () => {
 
     return (
     <div className='review-card'>
-        {
+        { 
             reviews.map( review => <Review
             key={review._id}
             review = {review}
             handleDelete = {handleDelete}
             >
             </Review>)
+ 
         }
     </div>
     );
