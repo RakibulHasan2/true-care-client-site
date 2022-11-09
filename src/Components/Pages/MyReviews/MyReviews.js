@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../context/UserContext';
 import './MyReviews.css'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 import Review from './Review/Review';
 const MyReviews = () => {
     const {user} = useContext(AuthContext)
@@ -22,7 +24,17 @@ const MyReviews = () => {
         .then(data => {
             console.log(data)
             if (data.deletedCount > 0){
-                alert('deleted successfully');
+                toast.success("Deleted Successfully", {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    })
+                // alert('deleted');
                 const remaining = reviews.filter(odr => odr._id !== id);
                 setReview(remaining);
             }
