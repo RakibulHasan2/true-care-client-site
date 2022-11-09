@@ -1,0 +1,29 @@
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../../context/UserContext';
+import './MyReviews.css'
+import Review from './Review/Review';
+const MyReviews = () => {
+    const {user} = useContext(AuthContext)
+    const [reviews, setReview] = useState([])
+
+   useEffect( ()=>{
+    fetch(`http://localhost:5000/reviews?email=${user.email}`)
+    .then(res => res.json())
+    .then(data => setReview(data))
+   },[user?.email])
+
+
+    return (
+    <div className='review-card'>
+        {
+            reviews.map( review => <Review
+            key={review._id}
+            review = {review}
+            >
+            </Review>)
+        }
+    </div>
+    );
+};
+
+export default MyReviews;

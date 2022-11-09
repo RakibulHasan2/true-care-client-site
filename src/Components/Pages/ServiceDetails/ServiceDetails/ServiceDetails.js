@@ -13,7 +13,7 @@ const ServiceDetails = () => {
         const email = user?.email || 'unregistered';
         const message = form.message.value;
         const photoURL = form.url.value
-
+ 
         const review = {
             service: _id,
             serviceName: name,
@@ -21,7 +21,8 @@ const ServiceDetails = () => {
             customer: UserName,
             email,
             message,
-            photoURL
+            photoURL: photoURL,
+            img: img
         }
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
