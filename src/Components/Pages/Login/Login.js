@@ -51,7 +51,6 @@ const Login = () => {
           });
     }
     const handleGoogle = () =>{
-
         signWithPopUp()
         .then(result =>{
             const user = result.user;

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import './UpdateReview.css'
 import { useLoaderData } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 const UpdateReview = () => {
+    
     const storedReview = useLoaderData()
 
     const [review, setReview] = useState(storedReview)
@@ -18,8 +21,16 @@ const UpdateReview = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0){
-                    alert('user updated')
-                    console.log(data);
+                    toast.success("Updated Review Successfully", {
+                        position: "top-center",
+                        autoClose: 1000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        })
                 }
                 
             })
@@ -39,6 +50,16 @@ const UpdateReview = () => {
                   <h1 className='font-bold text-xl mb-5'>Please Update <span className='text-teal-500 text-2xl'>{storedReview.serviceName}</span> review here :</h1>
                     <textarea onChange={handleInputChange} defaultValue={storedReview.message} type="text" name='message'  className="textarea textarea-success w-full items-center" placeholder="Bio"></textarea> <br />
                     <button type="submit" className='btn btn-success mt-5'>Update Review</button>
+                    <ToastContainer position="top-center"
+                        autoClose={1000}
+                       hideProgressBar={false}
+                          newestOnTop={false}
+                            closeOnClick
+                              rtl={false}
+                      pauseOnFocusLoss
+                       draggable
+                        pauseOnHover
+                          theme="light" />
                     
                
              </form>

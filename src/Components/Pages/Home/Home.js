@@ -5,7 +5,9 @@ import Experience from '../Experience/Experience';
 import Services from '../Services/Services/Services';
 
 const Home = () => {
-   
+   useEffect( () => {
+    document.title = 'True Care'
+   },[])
     return (
         <div>
             <Carousel></Carousel>
