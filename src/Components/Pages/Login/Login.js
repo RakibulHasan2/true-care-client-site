@@ -76,7 +76,7 @@ const Login = () => {
                 <p className='text-danger'>{error}</p>
                 <button className='submit-button'>Submit</button>
             </form>
-            <p className='login-text'>New to Education Better?<Link to='/signup' className='login-text'>Create a New Account</Link></p>
+            <p className='login-text'>New to True Care?<Link to='/signup' className='login-text'>Create a New Account</Link></p>
             <button className='google-button' onClick={handleGoogle}>
          Continue With Google</button>
         </div>
