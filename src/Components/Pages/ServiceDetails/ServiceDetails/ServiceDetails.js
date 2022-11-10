@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/UserContext';
+import AllReview from '../../AllReview/AllReview';
 import './ServiceDetails.css'
 const ServiceDetails = () => {
     const {_id,name, img, price, details, ratings}  = useLoaderData()
@@ -34,7 +35,7 @@ const ServiceDetails = () => {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
-                 authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
+                //  authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
             },
             body: JSON.stringify(review)
         })
@@ -51,7 +52,7 @@ const ServiceDetails = () => {
         })
         .catch(err => console.log(err));
     }
-
+ 
 
     
     return (
@@ -66,10 +67,6 @@ const ServiceDetails = () => {
            </div>
            <img src={img} alt="" />
            </div>
-              {/* ----------all review---------------------*/}
-              <div>
-
-              </div>
             {/* ----------review form---------------------*/}
            <div className='review-section'>
            <form onSubmit={handlePlaceReview}>
@@ -82,14 +79,6 @@ const ServiceDetails = () => {
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full mb-3" placeholder="Your Message" required></textarea>
 
-               {/* {
-                user?.uid?
-                <>
-                 <input className='btn mb-5' type="submit" value="Submit Review" />
-                 </>
-                 :
-                 <> <Link to='/login'><input className='btn mb-5' type="submit" value="Submit Review" /></Link></>
-               } */}
                <Link to='/login'>
               {
                 user?.email?
@@ -100,6 +89,10 @@ const ServiceDetails = () => {
                <input onClick={loginPlease} className='btn mb-5' type="submit" value="Submit Review" />
             </form>
            </div>
+            {/* ----------all review---------------------*/}
+            <div>
+               <AllReview></AllReview>
+              </div>
         </div>
     );
 };

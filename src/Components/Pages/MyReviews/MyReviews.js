@@ -5,15 +5,11 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Review from './Review/Review';
 const MyReviews = () => {
-    const {user,logOut} = useContext(AuthContext)
+    const {user} = useContext(AuthContext)
     const [reviews, setReview] = useState([])
    useEffect( ()=>{
         document.title = 'My Reviews'
-    fetch(`https://true-care-server.vercel.app/reviews?email=${user?.email}`,{
-        headers:{
-            authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
-        }
-    })
+    fetch(`https://true-care-server.vercel.app/reviews?email=${user?.email}`)
     .then(res => res.json())
     .then(data => {
         setReview(data)
