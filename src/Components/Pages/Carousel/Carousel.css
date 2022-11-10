@@ -6,7 +6,7 @@
  /* for mobile devices */
  @media only screen and (max-width: 600px) {
     .responsive-font{
-        font-size: 15px;
+        font-size: 10px;
         margin-right: 20px;
     }
   }
