@@ -8,6 +8,7 @@ const AllReview = () => {
         .then(res => res.json())
         .then(data => setAllReview(data))
       } ,[])
+    //   console.log(allReview)
     return (
         <div>
              <div className='text-center mb-4'>

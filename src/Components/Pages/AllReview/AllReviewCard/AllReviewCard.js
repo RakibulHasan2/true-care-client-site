@@ -3,7 +3,7 @@ import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './AllReviewCard.css'
 const AllReviewCard = ({review}) => {
-    const {_id,service,serviceName,customer,email,message,photoURL,img} = review  ;
+    const {_id,service,serviceName,customer,email,message,photoURL,img} = review;
     return (
         <div className="card card-compact w-96 shadow-xl mb-3 review-body">
             <figure><img src={img} alt="" /></figure>
