@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/bs';
 import './Review.css'
 import { ToastContainer } from 'react-toastify';
+import {  FaUser } from 'react-icons/fa';
 const Review = ({review, handleDelete}) => {
     const {_id,service,serviceName,customer,email,message,photoURL,img} = review
      
@@ -16,7 +17,12 @@ const Review = ({review, handleDelete}) => {
                         <h2 className="text-xl text-center text-teal-600">{serviceName}</h2>
                       <div className='flex justify-between userPhoto'>
                       <h2 className='text-lg'>Name: {customer}</h2>
-                      <img src={photoURL} alt="" />
+                      {
+                        photoURL? 
+                        <><img src={photoURL} alt="" /></>
+                        :
+                        <FaUser></FaUser>
+                      }
                       </div>
                         <h2 className='text-lg'>Email :{email}</h2>
                 </div>

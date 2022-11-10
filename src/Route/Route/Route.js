@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import AddServices from "../../Components/Pages/AddServices/AddServices";
 import Blog from "../../Components/Pages/Blog/Blog";
+import ErrorPage from "../../Components/Pages/ErrorPage/ErrorPage";
 import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login";
 import MyReviews from "../../Components/Pages/MyReviews/MyReviews";
@@ -16,6 +17,7 @@ export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children:[
             {
                 path: '/',
@@ -44,6 +46,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/reviews/:id', 
+                loader: ({params}) => fetch(`https://true-care-server.vercel.app/reviews/${params.id}`),
                 element: <UpdateReview></UpdateReview>
             },
             {

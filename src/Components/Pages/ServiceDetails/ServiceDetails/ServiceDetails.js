@@ -34,7 +34,7 @@ const ServiceDetails = () => {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json',
-                //  authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
+                 authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
             },
             body: JSON.stringify(review)
         })
@@ -77,7 +77,7 @@ const ServiceDetails = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mb-5'>
                     <input name="Name" type="text" placeholder="Your Name" className="input input-ghost w-full  input-bordered" required />
                     <input name="email" type="text" placeholder="Your email" defaultValue={user?.email} className="input input-ghost w-full  input-bordered" readOnly />
-                    <input name="url" type="text" placeholder="Your Photo URL"  className="input input-ghost w-full  input-bordered"  required  />
+                    <input name="url" type="text" placeholder="Your Photo URL"  className="input input-ghost w-full  input-bordered"    />
                 </div>
                 <textarea name="message" className="textarea textarea-bordered h-24 w-full mb-3" placeholder="Your Message" required></textarea>
 
