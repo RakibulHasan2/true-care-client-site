@@ -5,6 +5,7 @@ import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login";
 import MyReviews from "../../Components/Pages/MyReviews/MyReviews";
 import ServiceDetails from "../../Components/Pages/ServiceDetails/ServiceDetails/ServiceDetails";
+import AllServices from "../../Components/Pages/Services/AllServices/AllServices";
 import Services from "../../Components/Pages/Services/Services/Services";
 import Main from "../../Layout/Main/Main";
 import SignUp from './../../Components/Pages/SignUp/SignUp';
@@ -20,12 +21,16 @@ export const routes = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path: '/service',
+                path: '/services',
                 element: <Services></Services>
             },
             {
+                path: '/allServices',
+                element: <AllServices></AllServices>
+            },
+            {
                 path: '/addService',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             },
             {
                 path: '/service/:id', 

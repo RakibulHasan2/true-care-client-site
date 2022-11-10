@@ -1,25 +1,28 @@
 import React from 'react';
 import './Footer.css'
+import logo from '../../../Images/pngwing.com (3).png'
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-black footer text-base-content p-28">
-        <div>
-        <img src='' alt="" />
-        <p>ACME Industries Ltd.<br/>Providing reliable tech since 1992</p>
+        <div className='logo-footer'>
+        <img src={logo} alt="" />
+        <p className='text-3xl font-bold'>True <span className='text-teal-600'>Care</span><br/>Born For Serving</p>
           </div> 
        <div>
           <span className="footer-title">Services</span> 
-           <a href="/" className="link link-hover">Branding</a> 
-           <a href="/" className="link link-hover">Design</a> 
-           <a href="/" className="link link-hover">Marketing</a> 
-           <a href="/" className="link link-hover">Advertisement</a>
+           <a href="/" className="link link-hover">Dental Implants</a> 
+           <a href="/" className="link link-hover">Teeth Whitening</a> 
+           <a href="/" className="link link-hover">Surgical Dentistry</a> 
+           <a href="/" className="link link-hover">Root Canal</a> 
+           <a href="/" className="link link-hover">Cap / Crown</a> 
+           <a href="/" className="link link-hover">Orthodontics</a>
         </div> 
        <div>
-         <span className="footer-title">Company</span> 
-         <a href="/" className="link link-hover">About us</a> 
+         <span className="footer-title">Contact</span> 
+         <a href="/" className="link link-hover">About Me</a> 
          <a href="/" className="link link-hover">Contact</a> 
-        <a href="/" className="link link-hover">Jobs</a> 
-        <a href="/" className="link link-hover">Press kit</a>
+        <a href="/" className="link link-hover">Telephone</a> 
+        <a href="/" className="link link-hover">Location</a>
       </div> 
      <div>
        <span className="footer-title">Legal</span> 

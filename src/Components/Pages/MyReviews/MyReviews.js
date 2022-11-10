@@ -9,10 +9,15 @@ const MyReviews = () => {
     const [reviews, setReview] = useState([])
 
    useEffect( ()=>{
-    fetch(`http://localhost:5000/reviews?email=${user.email}`)
+    fetch(`http://localhost:5000/reviews?email=${user.email}`,{
+        headers:{
+            authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
+        }
+    })
     .then(res => res.json())
     .then(data => setReview(data))
    },[user?.email])
+
 
    const handleDelete = id => {
     const proceed = window.confirm('are you sure to delete this review')

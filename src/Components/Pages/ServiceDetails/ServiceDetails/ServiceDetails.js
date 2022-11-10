@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, Link } from 'react-router-dom';
 import { AuthContext } from '../../../../context/UserContext';
 import './ServiceDetails.css'
@@ -9,7 +9,7 @@ const ServiceDetails = () => {
     const loginPlease = () =>{
         setSubmit('Please Login to Submit')
     }
-
+  
     const handlePlaceReview = event => {
         event.preventDefault();
         const form = event.target;
@@ -28,10 +28,13 @@ const ServiceDetails = () => {
             photoURL: photoURL,
             img: img
         }
+     
+
         fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type' : 'application/json',
+                 authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
             },
             body: JSON.stringify(review)
         })
@@ -40,14 +43,16 @@ const ServiceDetails = () => {
             console.log(data)
             if(data.acknowledged)
             {
+               if(user.email){
                 alert('review placed successfully')
                 form.reset()
+               }
             }
         })
         .catch(err => console.log(err));
-
-
     }
+
+    
     return (
             <div >
                  {/*----------more details part of service----------*/}
@@ -85,7 +90,11 @@ const ServiceDetails = () => {
                  <> <Link to='/login'><input className='btn mb-5' type="submit" value="Submit Review" /></Link></>
                } */}
                <Link to='/login'>
-               <p className='mb-4 text-lg text-red-600'>{submit}</p>
+              {
+                user?.email?
+               <></>
+                : <> <p className='mb-4 text-lg text-red-600'>{submit}</p></>
+              }
                </Link>
                <input onClick={loginPlease} className='btn mb-5' type="submit" value="Submit Review" />
             </form>

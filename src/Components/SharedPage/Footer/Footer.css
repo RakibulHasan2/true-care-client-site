@@ -1,3 +1,12 @@
 .footer{
-    color: white;
+    color: black;
+    background-color: rgb(201, 206, 205);
+
+}
+.logo-footer img{
+    height: 50px;
+}
+.logo-footer{
+
+    display: flex;
 }
