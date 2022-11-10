@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Blog.css'
 const Blog = () => {
+    useEffect( ()=>{
+        document.title = 'Blogs'
+    },[])
     return (
         <div>
         <h2 className= 'font-bold text-teal-500 my-4 text-center text-4xl'>Blog Section</h2>

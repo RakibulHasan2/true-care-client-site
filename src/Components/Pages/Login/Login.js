@@ -1,8 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
 import './Login.css'
 const Login = () => {
+    useEffect( ()=>{
+        document.title = 'Login'
+    },[])
     const {signIn,signWithPopUp} = useContext(AuthContext)
     const location = useLocation();
     const from =  location.state?.from?.pathname || '/'
@@ -24,7 +27,7 @@ const Login = () => {
                 email:user.email
             }
             //get jwt token
-            fetch('http://localhost:5000/jwt', {
+            fetch('https://true-care-server.vercel.app/jwt', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -48,7 +51,7 @@ const Login = () => {
           });
     }
     const handleGoogle = () =>{
-         
+
         signWithPopUp()
         .then(result =>{
             const user = result.user;

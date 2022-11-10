@@ -1,11 +1,13 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { AuthContext } from './../../../context/UserContext';
 const SignUp = () => {
     const [error, setError] = useState(null)
     const {createUser,updateUserProfile} = useContext(AuthContext)
-
+    useEffect( ()=>{
+        document.title = 'SignUp'
+    },[])
     const navigate = useNavigate(); 
 
     const handleSubmit = event =>{

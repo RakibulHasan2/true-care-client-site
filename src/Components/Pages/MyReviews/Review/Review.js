@@ -38,7 +38,9 @@ const Review = ({review, handleDelete}) => {
                           theme="light" />
                     </div>
                     <div className="card-actions justify-end">
-                    <button className='btn btn-success'>Edit Review</button>
+                   <Link to={`/reviews/${_id}`}>
+                   <button className='btn btn-success'>Edit Review</button>
+                   </Link>
                     </div>
                 </div>           
             </div>

@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './AddServices.css'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const AddServices = () => {
+    useEffect( ()=>{
+        document.title = 'Add Service'
+    },[])
 
     const handlePlaceService = event => {
         event.preventDefault();
@@ -21,7 +24,7 @@ const AddServices = () => {
             details,
             img: photoURL
         }
-        fetch('http://localhost:5000/services', {
+        fetch('https://true-care-server.vercel.app/services', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

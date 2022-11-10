@@ -5,24 +5,26 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Review from './Review/Review';
 const MyReviews = () => {
-    const {user} = useContext(AuthContext)
+    const {user,logOut} = useContext(AuthContext)
     const [reviews, setReview] = useState([])
-
    useEffect( ()=>{
-    fetch(`http://localhost:5000/reviews?email=${user.email}`,{
+        document.title = 'My Reviews'
+    fetch(`https://true-care-server.vercel.app/reviews?email=${user?.email}`,{
         headers:{
             authorization: `Bearer ${localStorage.getItem('trueCare-Token')}`
         }
     })
     .then(res => res.json())
-    .then(data => setReview(data))
+    .then(data => {
+        setReview(data)
+    })
    },[user?.email])
 
 
    const handleDelete = id => {
     const proceed = window.confirm('are you sure to delete this review')
     if(proceed){
-        fetch(`http://localhost:5000/reviews/${id}`, {
+        fetch(`https://true-care-server.vercel.app/reviews/${id}`, {
          method: 'DELETE'
         })
         .then(res => res.json())
@@ -46,18 +48,21 @@ const MyReviews = () => {
     }
     }
 
-
-
     return (
-    <div className='review-card'>
-        { 
+    <div >
+        { reviews.length === 0 ?
+        <div className='flex justify-center font-bold'><h1 className='text-4xl mb-5'>No Reviews Were Added</h1></div>
+        :    
+      <div className='review-card'>
+        {
             reviews.map( review => <Review
-            key={review._id}
-            review = {review}
-            handleDelete = {handleDelete}
-            >
-            </Review>)
- 
+                key={review._id}
+                review = {review}
+                handleDelete = {handleDelete}
+                >
+                </Review>)
+        }
+      </div>
         }
     </div>
     );

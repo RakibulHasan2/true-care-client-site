@@ -4,6 +4,7 @@ import Blog from "../../Components/Pages/Blog/Blog";
 import Home from "../../Components/Pages/Home/Home";
 import Login from "../../Components/Pages/Login/Login";
 import MyReviews from "../../Components/Pages/MyReviews/MyReviews";
+import UpdateReview from "../../Components/Pages/MyReviews/UpdateReview/UpdateReview";
 import ServiceDetails from "../../Components/Pages/ServiceDetails/ServiceDetails/ServiceDetails";
 import AllServices from "../../Components/Pages/Services/AllServices/AllServices";
 import Services from "../../Components/Pages/Services/Services/Services";
@@ -34,12 +35,16 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/service/:id', 
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`),  
+                loader: ({params}) => fetch(`https://true-care-server.vercel.app/services/${params.id}`),  
                 element: <ServiceDetails></ServiceDetails>
             },
             {
                 path: '/reviews', 
                 element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+            },
+            {
+                path: '/reviews/:id', 
+                element: <UpdateReview></UpdateReview>
             },
             {
                 path: '/login',   
